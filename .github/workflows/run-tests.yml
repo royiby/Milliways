@@ -45,9 +45,8 @@ jobs:
       - name: Run tests using mobilewright
         working-directory: tests
         run: |
-          # some of the tests are expected to fail, so we're adding || true
           npm ci --ignore-scripts
-          npm run test:mobilenext || true
+          npm run test:mobilenext
 
       - name: Upload test report
         uses: actions/upload-artifact@v7

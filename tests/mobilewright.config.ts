@@ -6,7 +6,7 @@ import { resolve } from 'node:path';
 
 function requireEnv(names: Array<string>) {
   for (const name of names) {
-    if (!(name in process.env)) {
+    if (!process.env[name]) {
       throw new Error(`Environment variable ${name} must be set before running tests`);
     }
   }
